@@ -38,7 +38,7 @@ Allemand : allemand de Suisse (« ss », jamais « ß » ; « Offerte », « Lif
   FAQ, pied de page, données `application/ld+json` dans le `<head>`, `EMAIL` et messages
   `UI` dans `main.js`). Cherche toutes les occurrences et remplace-les toutes, y compris
   les liens `tel:+41...` et `https://wa.me/41...`.
-- **Textes des services, FAQ, avantages** : dans `index.html` + `EN`.
+- **Textes des services, FAQ, avantages** : dans `index.html` + `EN` + `DE`.
 - **Avis clients** (section « Ce que disent nos clients ») : uniquement de **vrais** avis
   fournis par la personne. Ne jamais en inventer.
 - **Objets du calculateur** : tableau `CATS` dans `main.js`, format
