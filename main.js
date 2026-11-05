@@ -124,7 +124,9 @@
     'faq.3.q':'Arbeiten Sie am Wochenende?',
     'faq.3.a':'Ja, auf Anfrage. Wir sind auch samstags und je nach Verfügbarkeit sonntags im Einsatz, damit Ihr Betrieb oder Ihre Woche nicht gestört wird.',
     'faq.4.q':'Wie lautet Ihre E-Mail-Adresse?','faq.4.a':'Schreiben Sie uns an',
-    'faq.5.q':'Wie lautet Ihre Telefonnummer?','faq.5.a':'Rufen Sie uns an unter','faq.5.b':'(auch per WhatsApp).'
+    'faq.5.q':'Wie lautet Ihre Telefonnummer?','faq.5.a':'Rufen Sie uns an unter','faq.5.b':'(auch per WhatsApp).',
+    'faq.6.q':'Wie schwer darf ein Karton höchstens sein?',
+    'faq.6.a':'Jeder Karton darf höchstens 20 kg wiegen, damit er sicher getragen werden kann. Verteilen Sie schwere Gegenstände auf mehrere Kartons.'
   };
   const UI = {
     fr:{ theme:'Changer de thème', err:'Merci de remplir les champs obligatoires (*).', ok:'Votre messagerie s\'ouvre avec la demande pré-remplie : il ne reste qu\'à l\'envoyer.', none:'aucun objet détaillé', subj:'Demande de devis',
