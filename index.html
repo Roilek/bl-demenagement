@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B&amp;L Déménagement · Déménagement, débarras &amp; nettoyage</title>
+<meta name="description" content="B&L Déménagement : déménagement pour particuliers et entreprises, débarras et nettoyage (bureaux, domicile, fin de bail). Un seul interlocuteur, devis clair, gratuit et rapide.">
+<meta name="theme-color" content="#C8961E">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="B&amp;L Déménagement">
+<meta property="og:description" content="Déménagement, débarras et nettoyage. Un seul interlocuteur, devis gratuit et rapide.">
+<meta property="og:image" content="assets/logo-light.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  // Thème et langue appliqués avant le rendu (évite le flash)
+  (function(){
+    var t=null,l=null;
+    try{ t=localStorage.getItem('bl-theme'); l=localStorage.getItem('bl-lang'); }catch(e){}
+    if(!t) t=(window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+    document.documentElement.setAttribute('data-theme',t);
+    if(l==='en'||l==='fr') document.documentElement.setAttribute('lang',l);
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MovingCompany",
+  "name": "B&L Déménagement",
+  "email": "info@bldem.ch",
+  "telephone": "+41764515042",
+  "url": "https://bldem.ch",
+  "logo": "assets/logo-light.png",
+  "areaServed": "CH",
+  "makesOffer": [
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Déménagement particuliers"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Déménagement d'entreprises"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Débarras"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Nettoyage de bureaux, domicile et fin de bail"}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="B&amp;L Déménagement">
+      <img class="logo-l" src="assets/logo-light.png" alt="B&amp;L Déménagement" width="120" height="99">
+      <img class="logo-d" src="assets/logo-dark.png" alt="" width="120" height="99" aria-hidden="true">
+    </a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#devis" data-i18n="nav.quote">Devis</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang="fr">FR</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z"/></svg>
+      </button>
+      <a class="btn btn-gold btn-sm hide-sm" href="#devis" data-i18n="cta.quote">Devis gratuit</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <img class="hero-logo" src="assets/logo-dark.png" alt="B&amp;L Déménagement" width="300" height="248">
+      <h1 data-i18n="hero.title">Votre déménagement, en toute sérénité.</h1>
+      <p class="hero-lead" data-i18n="hero.lead">Déménagement, débarras et nettoyage pour particuliers et entreprises. Une équipe expérimentée, un seul interlocuteur et un devis clair, gratuit et rapide.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#devis" data-i18n="cta.askQuote">Demander un devis</a>
+        <a class="btn btn-ghost-light" href="tel:+41764515042">076 451 50 42</a>
+      </div>
+      <ul class="hero-trust">
+        <li data-i18n="trust.1">Devis gratuit</li>
+        <li data-i18n="trust.2">Équipe expérimentée</li>
+        <li data-i18n="trust.3">7j/7 sur demande</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. SERVICES -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="svc.eyebrow">Nos services</p>
+      <h2 data-i18n="svc.title">Tout ce qu'il faut pour changer d'adresse.</h2>
+      <p class="section-lead" data-i18n="svc.lead">Du premier carton à la remise des clés, nous nous occupons de tout, avec soin et ponctualité.</p>
+
+      <div class="svc-grid">
+        <article class="svc-card">
+          <div class="svc-img" style="background-image:url('assets/svc-moving.jpg')"></div>
+          <div class="svc-body">
+            <h3 data-i18n="svc.move.t">Déménagement</h3>
+            <p data-i18n="svc.move.d">Emballage, démontage, transport et remontage de vos meubles, en Suisse et à l'étranger.</p>
+            <ul class="svc-list">
+              <li data-i18n="svc.move.1">Particuliers : appartements, maisons, studios</li>
+              <li data-i18n="svc.move.2">Professionnels : bureaux, commerces, entreprises</li>
+            </ul>
+          </div>
+        </article>
+        <article class="svc-card">
+          <div class="svc-img" style="background-image:url('assets/svc-clearing.jpg')"></div>
+          <div class="svc-body">
+            <h3 data-i18n="svc.clear.t">Débarras</h3>
+            <p data-i18n="svc.clear.d">Caves, greniers, appartements ou locaux entiers : nous vidons, trions et évacuons, déchèterie comprise.</p>
+            <ul class="svc-list">
+              <li data-i18n="svc.clear.1">Débarras complet ou partiel</li>
+              <li data-i18n="svc.clear.2">Tri, recyclage et évacuation</li>
+            </ul>
+          </div>
+        </article>
+        <article class="svc-card">
+          <div class="svc-img" style="background-image:url('assets/svc-cleaning.jpg')"></div>
+          <div class="svc-body">
+            <h3 data-i18n="svc.clean.t">Nettoyage</h3>
+            <p data-i18n="svc.clean.d">Un nettoyage soigné, du sol au plafond, pour rendre les lieux impeccables.</p>
+            <ul class="svc-list">
+              <li data-i18n="svc.clean.1">Bureaux et locaux professionnels</li>
+              <li data-i18n="svc.clean.2">Domicile (privé)</li>
+              <li data-i18n="svc.clean.3">Fin de bail, avec garantie de remise</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="qualities">
+        <div class="q"><span class="q-ico" aria-hidden="true">✦</span><strong data-i18n="ql.1.t">Expérimentés</strong><span data-i18n="ql.1.d">Une équipe rodée à tous les types de déménagement.</span></div>
+        <div class="q"><span class="q-ico" aria-hidden="true">✦</span><strong data-i18n="ql.2.t">Professionnels</strong><span data-i18n="ql.2.d">Matériel adapté, protection de vos biens, ponctualité.</span></div>
+        <div class="q"><span class="q-ico" aria-hidden="true">✦</span><strong data-i18n="ql.3.t">Flexibles</strong><span data-i18n="ql.3.d">Horaires adaptés, y compris le week-end sur demande.</span></div>
+        <div class="q"><span class="q-ico" aria-hidden="true">✦</span><strong data-i18n="ql.4.t">Soigneux</strong><span data-i18n="ql.4.d">Chaque objet est traité comme s'il était le nôtre.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. USP -->
+  <section class="section usp">
+    <div class="wrap usp-inner">
+      <div class="usp-text">
+        <p class="eyebrow" data-i18n="usp.eyebrow">Pourquoi B&amp;L</p>
+        <h2 data-i18n="usp.title">Un seul interlocuteur pour tout.</h2>
+        <p class="section-lead" data-i18n="usp.lead">Déménagement, débarras et nettoyage : un seul contact, un seul devis, une seule équipe. Vous n'avez rien à coordonner.</p>
+        <ul class="usp-list">
+          <li><strong data-i18n="usp.1.t">Un devis clair</strong><span data-i18n="usp.1.d">Tout est détaillé, sans surprise à la fin.</span></li>
+          <li><strong data-i18n="usp.2.t">Une équipe de confiance</strong><span data-i18n="usp.2.d">Des déménageurs sérieux, soigneux et ponctuels.</span></li>
+          <li><strong data-i18n="usp.3.t">Un service flexible</strong><span data-i18n="usp.3.d">Nous nous adaptons à vos dates et à vos contraintes.</span></li>
+        </ul>
+      </div>
+      <div class="usp-card">
+        <p class="usp-card-k" data-i18n="usp.card.k">Devis</p>
+        <p class="usp-card-big" data-i18n="usp.card.big">Gratuit &amp; rapide</p>
+        <p class="usp-card-s" data-i18n="usp.card.s">Réponse sous 24 h, sans engagement.</p>
+        <a class="btn btn-gold" href="#devis" data-i18n="cta.askQuote">Demander un devis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TÉMOIGNAGES -->
+  <!-- ⚠️ EXEMPLES À REMPLACER par de vrais avis clients avant la mise en ligne publique -->
+  <section class="section testi">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="testi.eyebrow">Ils nous ont fait confiance</p>
+      <h2 data-i18n="testi.title">Ce que disent nos clients.</h2>
+      <div class="testi-grid">
+        <figure class="testi-card">
+          <div class="stars" role="img" aria-label="5/5">★★★★★</div>
+          <blockquote data-i18n="testi.1.q">Déménagement de notre appartement réalisé en une journée, sans aucune casse. Équipe ponctuelle, aimable et très efficace. Je recommande !</blockquote>
+          <figcaption><strong>Sophie M.</strong> · <span data-i18n="testi.1.w">Déménagement privé</span></figcaption>
+        </figure>
+        <figure class="testi-card">
+          <div class="stars" role="img" aria-label="5/5">★★★★★</div>
+          <blockquote data-i18n="testi.2.q">Ils ont géré le déménagement de nos bureaux un samedi pour ne pas bloquer l'activité. Tout était en place le lundi matin.</blockquote>
+          <figcaption><strong>Marc D.</strong> · <span data-i18n="testi.2.w">Déménagement d'entreprise</span></figcaption>
+        </figure>
+        <figure class="testi-card">
+          <div class="stars" role="img" aria-label="5/5">★★★★★</div>
+          <blockquote data-i18n="testi.3.q">Déménagement et nettoyage de fin de bail avec la même équipe : l'état des lieux s'est passé sans aucune remarque.</blockquote>
+          <figcaption><strong>Laura P.</strong> · <span data-i18n="testi.3.w">Déménagement + nettoyage</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. DEVIS / CALCULATEUR -->
+  <section class="section quote" id="devis">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="q.eyebrow">Devis gratuit</p>
+      <h2 data-i18n="q.title">Calculez votre volume, recevez votre devis.</h2>
+      <p class="section-lead" data-i18n="q.lead">Indiquez vos meubles et objets : le volume se calcule automatiquement. Pas le temps ? Indiquez simplement la surface.</p>
+
+      <form class="quote-form" id="quoteForm" novalidate>
+        <!-- anti-spam : champ invisible, seuls les robots le cochent -->
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+
+        <fieldset class="qf-block">
+          <legend data-i18n="q.svc">Prestation souhaitée</legend>
+          <div class="chips" id="svcChips">
+            <label class="chip"><input type="checkbox" name="svc" value="move_private" checked><span data-i18n="q.svc.mp">Déménagement privé</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="move_pro"><span data-i18n="q.svc.mb">Déménagement entreprise</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="clear"><span data-i18n="q.svc.cl">Débarras</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="clean_office"><span data-i18n="q.svc.co">Nettoyage bureaux</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="clean_home"><span data-i18n="q.svc.ch">Nettoyage domicile</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="clean_lease"><span data-i18n="q.svc.ce">Nettoyage fin de bail</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="qf-block">
+          <legend data-i18n="q.surface">Surface (calcul rapide)</legend>
+          <div class="surface-row">
+            <label class="field"><span data-i18n="q.m2">Surface du logement / local (m²)</span>
+              <input type="number" id="m2" name="m2" min="0" step="1" inputmode="numeric" placeholder="ex. 75">
+            </label>
+            <div class="surface-out" aria-live="polite">
+              <span data-i18n="q.m2est">Volume estimé</span>
+              <strong id="m2Vol">0 m³</strong>
+            </div>
+          </div>
+          <p class="hint" data-i18n="q.m2hint">Estimation indicative (environ 0,5 m³ par m² habitable). Pour plus de précision, détaillez vos objets ci-dessous.</p>
+        </fieldset>
+
+        <fieldset class="qf-block">
+          <legend data-i18n="q.items">Calculateur de volume (m³)</legend>
+          <div class="calc" id="calc"></div>
+        </fieldset>
+
+        <div class="qf-cols">
+          <fieldset class="qf-block">
+            <legend data-i18n="q.from">Adresse de départ</legend>
+            <label class="field"><span data-i18n="f.addr">Adresse *</span><input name="from_addr" required></label>
+            <div class="row2">
+              <label class="field"><span data-i18n="f.zip">Code postal *</span><input name="from_zip" required inputmode="numeric"></label>
+              <label class="field"><span data-i18n="f.city">Ville *</span><input name="from_city" required></label>
+            </div>
+            <label class="field"><span data-i18n="f.country">Pays *</span><input name="from_country" value="Suisse" required></label>
+            <div class="row2">
+              <label class="field"><span data-i18n="f.floor">Étage</span><input name="from_floor" type="number" min="0" inputmode="numeric" placeholder="0"></label>
+              <label class="field"><span data-i18n="f.lift">Ascenseur</span>
+                <select name="from_lift">
+                  <option value="grand" data-i18n="f.lift.l">Grand</option>
+                  <option value="moyen" data-i18n="f.lift.m">Moyen</option>
+                  <option value="petit" data-i18n="f.lift.s">Petit</option>
+                  <option value="sans" data-i18n="f.lift.n" selected>Sans ascenseur</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset class="qf-block">
+            <legend data-i18n="q.to">Adresse d'arrivée</legend>
+            <label class="field"><span data-i18n="f.addr">Adresse *</span><input name="to_addr" required></label>
+            <div class="row2">
+              <label class="field"><span data-i18n="f.zip">Code postal *</span><input name="to_zip" required inputmode="numeric"></label>
+              <label class="field"><span data-i18n="f.city">Ville *</span><input name="to_city" required></label>
+            </div>
+            <label class="field"><span data-i18n="f.country">Pays *</span><input name="to_country" value="Suisse" required></label>
+            <div class="row2">
+              <label class="field"><span data-i18n="f.floor">Étage</span><input name="to_floor" type="number" min="0" inputmode="numeric" placeholder="0"></label>
+              <label class="field"><span data-i18n="f.lift">Ascenseur</span>
+                <select name="to_lift">
+                  <option value="grand" data-i18n="f.lift.l">Grand</option>
+                  <option value="moyen" data-i18n="f.lift.m">Moyen</option>
+                  <option value="petit" data-i18n="f.lift.s">Petit</option>
+                  <option value="sans" data-i18n="f.lift.n" selected>Sans ascenseur</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <fieldset class="qf-block">
+          <legend data-i18n="q.you">Vos coordonnées</legend>
+          <div class="row2">
+            <label class="field"><span data-i18n="f.first">Prénom *</span><input name="first" required autocomplete="given-name"></label>
+            <label class="field"><span data-i18n="f.last">Nom *</span><input name="last" required autocomplete="family-name"></label>
+          </div>
+          <div class="row2">
+            <label class="field"><span data-i18n="f.email">Adresse e-mail *</span><input name="email" type="email" required autocomplete="email"></label>
+            <label class="field"><span data-i18n="f.phone">Téléphone *</span><input name="phone" type="tel" required autocomplete="tel"></label>
+          </div>
+          <label class="field"><span data-i18n="f.date">Date souhaitée *</span><input name="date" type="date" required></label>
+          <label class="field"><span data-i18n="f.msg">Précisions (accès, objets fragiles, piano…)</span><textarea name="msg" rows="3"></textarea></label>
+        </fieldset>
+
+        <div class="quote-bar">
+          <div class="quote-total">
+            <span data-i18n="q.total">Volume total estimé</span>
+            <strong id="totalVol">0.00 m³</strong>
+          </div>
+          <button class="btn btn-gold" type="submit" data-i18n="q.send">Envoyer ma demande</button>
+        </div>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- 6. CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="wrap contact-inner">
+      <div>
+        <p class="eyebrow" data-i18n="c.eyebrow">Contact</p>
+        <h2 data-i18n="c.title">Parlons de votre projet.</h2>
+        <p class="section-lead" data-i18n="c.lead">Un appel, un message ou un e-mail : nous vous répondons rapidement.</p>
+      </div>
+      <div class="contact-cards">
+        <a class="c-card" href="tel:+41764515042">
+          <span class="c-k" data-i18n="c.phone">Téléphone</span>
+          <span class="c-v">076 451 50 42</span>
+        </a>
+        <a class="c-card" href="https://wa.me/41764515042" target="_blank" rel="noopener">
+          <span class="c-k">WhatsApp</span>
+          <span class="c-v" data-i18n="c.wa">Écrivez-nous</span>
+        </a>
+        <a class="c-card" href="mailto:info@bldem.ch">
+          <span class="c-k" data-i18n="c.email">E-mail</span>
+          <span class="c-v">info@bldem.ch</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="section faq" id="faq">
+    <div class="wrap faq-wrap">
+      <p class="eyebrow" data-i18n="faq.eyebrow">Questions fréquentes</p>
+      <h2 data-i18n="faq.title">Vos questions, nos réponses.</h2>
+      <div class="faq-list">
+        <details open>
+          <summary data-i18n="faq.1.q">Mes biens sont-ils assurés ?</summary>
+          <p data-i18n="faq.1.a">Oui. Nos interventions sont couvertes par une assurance responsabilité civile professionnelle. Les détails de la couverture vous sont communiqués avec le devis.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.2.q">Comment calculez-vous le prix ?</summary>
+          <p data-i18n="faq.2.a">Le prix dépend du volume à transporter (en m³), de la distance, des accès (étages, ascenseur, distance de portage) et des prestations choisies (emballage, démontage, débarras, nettoyage). Notre calculateur vous donne une estimation du volume, puis nous vous envoyons un devis clair et détaillé, gratuit et sans engagement.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.3.q">Travaillez-vous le week-end ?</summary>
+          <p data-i18n="faq.3.a">Oui, sur demande. Nous intervenons aussi le samedi et, selon disponibilité, le dimanche, pour ne pas perturber votre activité ou votre semaine.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.4.q">Quelle est votre adresse e-mail ?</summary>
+          <p><span data-i18n="faq.4.a">Écrivez-nous à</span> <a href="mailto:info@bldem.ch">info@bldem.ch</a>.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.5.q">Quel est votre numéro de téléphone ?</summary>
+          <p><span data-i18n="faq.5.a">Appelez-nous au</span> <a href="tel:+41764515042">076 451 50 42</a> <span data-i18n="faq.5.b">(aussi sur WhatsApp).</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <img class="footer-logo" src="assets/logo-dark.png" alt="B&amp;L Déménagement" width="130" height="107">
+    <nav class="footer-links" aria-label="Pied de page">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#devis" data-i18n="nav.quote">Devis</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="mailto:info@bldem.ch">info@bldem.ch</a>
+      <a href="tel:+41764515042">076 451 50 42</a>
+    </nav>
+    <p class="footer-meta">© <span id="year">2026</span> B&amp;L Déménagement</p>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
