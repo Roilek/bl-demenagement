@@ -65,9 +65,7 @@
     'faq.3.q':'Do you work at weekends?',
     'faq.3.a':'Yes, on request. We also work on Saturdays and, depending on availability, Sundays, so your business or your week isn\'t disrupted.',
     'faq.4.q':'What is your email address?','faq.4.a':'Write to us at',
-    'faq.5.q':'What is your phone number?','faq.5.a':'Call us on','faq.5.b':'(also on WhatsApp).',
-    'faq.6.q':'What is the maximum weight per box?',
-    'faq.6.a':'Each box must weigh no more than 20 kg to ensure safe handling. Spread heavy items across several boxes.'
+    'faq.5.q':'What is your phone number?','faq.5.a':'Call us on','faq.5.b':'(also on WhatsApp).'
   };
   // Allemand (Suisse : « ss » au lieu de « ß », vouvoiement « Sie »)
   const DE = {
