@@ -23,7 +23,7 @@
     try{ t=localStorage.getItem('bl-theme'); l=localStorage.getItem('bl-lang'); }catch(e){}
     if(!t) t=(window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
     document.documentElement.setAttribute('data-theme',t);
-    if(l==='en'||l==='fr') document.documentElement.setAttribute('lang',l);
+    if(l==='en'||l==='fr'||l==='de') document.documentElement.setAttribute('lang',l);
   })();
 </script>
 <script type="application/ld+json">
@@ -62,9 +62,10 @@
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="header-tools">
-      <div class="lang-switch" role="group" aria-label="Langue / Language">
+      <div class="lang-switch" role="group" aria-label="Langue / Language / Sprache">
         <button type="button" data-lang="fr">FR</button>
         <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="de">DE</button>
       </div>
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
         <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>

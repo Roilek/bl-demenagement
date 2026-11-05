@@ -10,7 +10,7 @@
     set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
   };
 
-  // ---------- Traductions (le FR est dans le HTML, l'EN ici) ----------
+  // ---------- Traductions (le FR est dans le HTML, l'EN et le DE ici) ----------
   const EN = {
     'skip':'Skip to content',
     'nav.services':'Services','nav.quote':'Quote','nav.faq':'FAQ','nav.contact':'Contact',
@@ -69,24 +69,85 @@
     'faq.6.q':'What is the maximum weight per box?',
     'faq.6.a':'Each box must weigh no more than 20 kg to ensure safe handling. Spread heavy items across several boxes.'
   };
+  // Allemand (Suisse : « ss » au lieu de « ß », vouvoiement « Sie »)
+  const DE = {
+    'skip':'Zum Inhalt springen',
+    'nav.services':'Leistungen','nav.quote':'Offerte','nav.faq':'FAQ','nav.contact':'Kontakt',
+    'cta.quote':'Kostenlose Offerte','cta.askQuote':'Offerte anfordern',
+    'hero.title':'Ihr Umzug – ganz ohne Stress.',
+    'hero.lead':'Umzug, Räumung und Reinigung für Privatpersonen und Unternehmen. Ein erfahrenes Team, eine einzige Ansprechperson und eine klare, kostenlose und schnelle Offerte.',
+    'trust.1':'Kostenlose Offerte','trust.2':'Erfahrenes Team','trust.3':'7 Tage die Woche auf Anfrage',
+    'svc.eyebrow':'Unsere Leistungen','svc.title':'Alles, was Sie für einen Adresswechsel brauchen.',
+    'svc.lead':'Vom ersten Karton bis zur Schlüsselübergabe kümmern wir uns um alles – sorgfältig und pünktlich.',
+    'svc.move.t':'Umzug','svc.move.d':'Verpacken, Demontage, Transport und Montage Ihrer Möbel – in der Schweiz und ins Ausland.',
+    'svc.move.1':'Privat: Wohnungen, Häuser, Studios','svc.move.2':'Geschäftlich: Büros, Läden, Unternehmen',
+    'svc.clear.t':'Räumung','svc.clear.d':'Keller, Estriche, ganze Wohnungen oder Räumlichkeiten: Wir räumen, sortieren und entsorgen, Entsorgungsstelle inbegriffen.',
+    'svc.clear.1':'Komplett- oder Teilräumung','svc.clear.2':'Sortieren, Recycling und Abtransport',
+    'svc.clean.t':'Reinigung','svc.clean.d':'Eine gründliche Reinigung vom Boden bis zur Decke, damit alles tadellos sauber ist.',
+    'svc.clean.1':'Büros und Geschäftsräume','svc.clean.2':'Wohnungen (privat)','svc.clean.3':'Endreinigung mit Abnahmegarantie',
+    'ql.1.t':'Erfahren','ql.1.d':'Ein eingespieltes Team für jede Art von Umzug.',
+    'ql.2.t':'Professionell','ql.2.d':'Geeignetes Material, Schutz Ihres Hab und Guts, Pünktlichkeit.',
+    'ql.3.t':'Flexibel','ql.3.d':'Zeiten nach Ihren Wünschen, auf Anfrage auch am Wochenende.',
+    'ql.4.t':'Sorgfältig','ql.4.d':'Wir behandeln jeden Gegenstand, als wäre es unser eigener.',
+    'usp.eyebrow':'Warum B&L','usp.title':'Eine Ansprechperson für alles.',
+    'usp.lead':'Umzug, Räumung und Reinigung: ein Kontakt, eine Offerte, ein Team. Sie müssen nichts koordinieren.',
+    'usp.1.t':'Eine klare Offerte','usp.1.d':'Alles ist detailliert aufgeführt, ohne Überraschungen am Schluss.',
+    'usp.2.t':'Ein Team, dem Sie vertrauen können','usp.2.d':'Zuverlässige, sorgfältige und pünktliche Umzugsprofis.',
+    'usp.3.t':'Ein flexibler Service','usp.3.d':'Wir richten uns nach Ihren Terminen und Bedürfnissen.',
+    'usp.card.k':'Offerte','usp.card.big':'Kostenlos & schnell','usp.card.s':'Antwort innert 24 Std., unverbindlich.',
+    'testi.eyebrow':'Sie haben uns vertraut','testi.title':'Das sagen unsere Kunden.',
+    'testi.1.q':'Unser Wohnungsumzug war an einem einzigen Tag erledigt, ganz ohne Schäden. Pünktliches, freundliches und sehr effizientes Team. Sehr empfehlenswert!',
+    'testi.1.w':'Privatumzug',
+    'testi.2.q':'Sie haben unseren Büroumzug an einem Samstag durchgeführt, damit der Betrieb nicht unterbrochen wurde. Am Montagmorgen war alles an seinem Platz.',
+    'testi.2.w':'Firmenumzug',
+    'testi.3.q':'Umzug und Endreinigung durch dasselbe Team: Die Wohnungsabnahme verlief ohne eine einzige Beanstandung.',
+    'testi.3.w':'Umzug + Reinigung',
+    'q.eyebrow':'Kostenlose Offerte','q.title':'Volumen berechnen, Offerte erhalten.',
+    'q.lead':'Geben Sie Ihre Möbel und Gegenstände an: Das Volumen wird automatisch berechnet. Keine Zeit? Geben Sie einfach die Fläche an.',
+    'q.svc':'Gewünschte Leistung','q.svc.mp':'Privatumzug','q.svc.mb':'Firmenumzug','q.svc.cl':'Räumung',
+    'q.svc.co':'Büroreinigung','q.svc.ch':'Wohnungsreinigung','q.svc.ce':'Endreinigung',
+    'q.surface':'Fläche (Schnellberechnung)','q.m2':'Fläche der Wohnung / Räumlichkeiten (m²)','q.m2est':'Geschätztes Volumen',
+    'q.m2hint':'Unverbindliche Schätzung (ca. 0,5 m³ pro m² Wohnfläche). Für mehr Genauigkeit listen Sie Ihre Gegenstände unten auf.',
+    'q.items':'Volumenrechner (m³)','q.from':'Auszugsadresse','q.to':'Einzugsadresse','q.you':'Ihre Kontaktdaten',
+    'f.addr':'Adresse *','f.zip':'PLZ *','f.city':'Ort *','f.country':'Land *','f.floor':'Stockwerk','f.lift':'Lift',
+    'f.lift.l':'Gross','f.lift.m':'Mittel','f.lift.s':'Klein','f.lift.n':'Kein Lift',
+    'f.first':'Vorname *','f.last':'Nachname *','f.email':'E-Mail-Adresse *','f.phone':'Telefon *','f.date':'Wunschtermin *',
+    'f.msg':'Details (Zugang, zerbrechliche Gegenstände, Klavier…)',
+    'q.total':'Geschätztes Gesamtvolumen','q.send':'Anfrage senden',
+    'c.eyebrow':'Kontakt','c.title':'Sprechen wir über Ihr Projekt.','c.lead':'Ein Anruf, eine Nachricht oder eine E-Mail: Wir melden uns rasch bei Ihnen.',
+    'c.phone':'Telefon','c.wa':'Schreiben Sie uns','c.email':'E-Mail',
+    'faq.eyebrow':'Häufige Fragen','faq.title':'Ihre Fragen, unsere Antworten.',
+    'faq.1.q':'Sind meine Sachen versichert?',
+    'faq.1.a':'Ja. Unsere Einsätze sind durch eine Berufshaftpflichtversicherung gedeckt. Die Details zur Deckung erhalten Sie mit der Offerte.',
+    'faq.2.q':'Wie berechnen Sie den Preis?',
+    'faq.2.a':'Der Preis hängt vom Transportvolumen (in m³), der Distanz, den Zugängen (Stockwerke, Lift, Tragdistanz) und den gewählten Leistungen ab (Verpacken, Demontage, Räumung, Reinigung). Unser Rechner schätzt das Volumen, danach senden wir Ihnen eine klare, detaillierte Offerte – kostenlos und unverbindlich.',
+    'faq.3.q':'Arbeiten Sie am Wochenende?',
+    'faq.3.a':'Ja, auf Anfrage. Wir sind auch samstags und je nach Verfügbarkeit sonntags im Einsatz, damit Ihr Betrieb oder Ihre Woche nicht gestört wird.',
+    'faq.4.q':'Wie lautet Ihre E-Mail-Adresse?','faq.4.a':'Schreiben Sie uns an',
+    'faq.5.q':'Wie lautet Ihre Telefonnummer?','faq.5.a':'Rufen Sie uns an unter','faq.5.b':'(auch per WhatsApp).'
+  };
   const UI = {
     fr:{ theme:'Changer de thème', err:'Merci de remplir les champs obligatoires (*).', ok:'Votre messagerie s\'ouvre avec la demande pré-remplie : il ne reste qu\'à l\'envoyer.', none:'aucun objet détaillé', subj:'Demande de devis',
          sending:'Envoi en cours…', sent:'Merci ! Votre demande a bien été envoyée. Nous vous répondons sous 24 h.', fail:'L\'envoi a échoué. Écrivez-nous à info@bldem.ch ou appelez le 076 451 50 42.' },
     en:{ theme:'Switch theme', err:'Please fill in the required fields (*).', ok:'Your email app is opening with the request pre-filled: just hit send.', none:'no items listed', subj:'Quote request',
-         sending:'Sending…', sent:'Thank you! Your request has been sent. We will get back to you within 24 h.', fail:'Sending failed. Email us at info@bldem.ch or call 076 451 50 42.' }
+         sending:'Sending…', sent:'Thank you! Your request has been sent. We will get back to you within 24 h.', fail:'Sending failed. Email us at info@bldem.ch or call 076 451 50 42.' },
+    de:{ theme:'Design wechseln', err:'Bitte füllen Sie die Pflichtfelder (*) aus.', ok:'Ihr E-Mail-Programm öffnet sich mit der vorausgefüllten Anfrage: Sie müssen sie nur noch senden.', none:'keine Gegenstände aufgeführt', subj:'Offertanfrage',
+         sending:'Wird gesendet…', sent:'Vielen Dank! Ihre Anfrage wurde gesendet. Wir antworten Ihnen innert 24 Std.', fail:'Das Senden ist fehlgeschlagen. Schreiben Sie uns an info@bldem.ch oder rufen Sie 076 451 50 42 an.' }
   };
 
   const nodes = document.querySelectorAll('[data-i18n]');
   const FR = {};
   nodes.forEach(n=>{ FR[n.dataset.i18n] = n.innerHTML; });
-  let lang = root.getAttribute('lang') === 'en' ? 'en' : 'fr';
+  const TR = { fr:FR, en:EN, de:DE };
+  let lang = TR[root.getAttribute('lang')] ? root.getAttribute('lang') : 'fr';
 
   function applyLang(l){
+    if(!TR[l]) l = 'fr';
     lang = l;
     root.setAttribute('lang', l);
     nodes.forEach(n=>{
       const k = n.dataset.i18n;
-      const v = l === 'en' ? EN[k] : FR[k];
+      const v = TR[l][k] != null ? TR[l][k] : FR[k];   // texte manquant : on garde le français
       if(v != null) n.innerHTML = v;
     });
     document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('is-on', b.dataset.lang === l));
@@ -107,30 +168,30 @@
 
   // ---------- Calculateur (mêmes objets que Suissemoving, volumes indicatifs en m³) ----------
   const CATS = [
-    { fr:'Chambre', en:'Bedroom', items:[
-      ['Lit double','Double bed',1.5],['Lit king size','King size bed',2],['Lit simple','Single bed',1],
-      ['Lit superposé','Bunk bed',2],['Double matelas','Double mattress',1],['Matelas','Mattress',0.5],
-      ['Armoire 3/4 portes','3/4-door wardrobe',2.5],['Armoire 2 portes','2-door wardrobe',1.5],
-      ['Commode','Chest of drawers',0.8],['Table de chevet','Bedside table',0.2]]},
-    { fr:'Salon', en:'Living room', items:[
-      ['Canapé 3 places ou d\'angle','3-seater or corner sofa',2.5],['Canapé 2 places','2-seater sofa',1.5],
-      ['Canapé-lit','Sofa bed',2],['Fauteuil','Armchair',1],['Table basse','Coffee table',0.5],
-      ['Buffet','Sideboard',1.5],['Étagère','Shelf unit',0.8],['Bureau','Desk',1],['Chaise de bureau','Office chair',0.3],
-      ['Ordinateur','Computer',0.2],['Bibliothèque','Bookcase',1.2],['Meuble télé','TV unit',0.6],['Télé','TV',0.3],
-      ['Lampe','Lamp',0.1],['Lustre','Chandelier',0.1],['Petit meuble','Small furniture',0.4],['Miroir','Mirror',0.2],['Tapis','Rug',0.3]]},
-    { fr:'Cuisine', en:'Kitchen', items:[
-      ['Congélateur','Freezer',0.8],['Frigo','Fridge',0.8],['Cuisinière','Cooker',0.5],['Four','Oven',0.3],
-      ['Four à micro-ondes','Microwave',0.1],['Lave-linge','Washing machine',0.6],['Lave-vaisselle','Dishwasher',0.5],
-      ['Sèche-linge','Tumble dryer',0.6],['Table','Table',1],['Chaise','Chair',0.25],['Placard','Cupboard',1],['Cabinet','Cabinet',0.6]]},
-    { fr:'Extérieur', en:'Outdoor', items:[
-      ['Table d\'extérieur','Outdoor table',0.8],['Banc','Bench',0.5],['Chaise de jardin','Garden chair',0.2],['Barbecue','Barbecue',0.4]]},
-    { fr:'Divers', en:'Miscellaneous', items:[
-      ['Cartons','Boxes',0.1],['Appareil d\'exercice','Exercise machine',0.5],['Outils','Tools',0.3],['Plantes','Plants',0.1],
-      ['Valise','Suitcase',0.1],['Ski / snowboard','Ski / snowboard',0.1],['Vélo','Bicycle',0.5]]},
-    { fr:'Encombrants et lourds', en:'Bulky and heavy', items:[
-      ['Piano (droit)','Piano (upright)',1.5],['Piano (électrique)','Piano (electric)',0.5],['Piano (à queue)','Piano (grand)',3],['Moto','Motorbike',1.5]]},
-    { fr:'Cartons', en:'Moving boxes', items:[
-      ['Carton standard','Standard box',0.12],['Carton penderie','Wardrobe box',0.3],['Carton livres','Book box',0.08],['Carton de vins','Wine box',0.1]]}
+    { fr:'Chambre', en:'Bedroom', de:'Schlafzimmer', items:[
+      ['Lit double','Double bed',1.5,'Doppelbett'],['Lit king size','King size bed',2,'Kingsize-Bett'],['Lit simple','Single bed',1,'Einzelbett'],
+      ['Lit superposé','Bunk bed',2,'Etagenbett'],['Double matelas','Double mattress',1,'Doppelmatratze'],['Matelas','Mattress',0.5,'Matratze'],
+      ['Armoire 3/4 portes','3/4-door wardrobe',2.5,'Kleiderschrank 3-/4-türig'],['Armoire 2 portes','2-door wardrobe',1.5,'Kleiderschrank 2-türig'],
+      ['Commode','Chest of drawers',0.8,'Kommode'],['Table de chevet','Bedside table',0.2,'Nachttisch']]},
+    { fr:'Salon', en:'Living room', de:'Wohnzimmer', items:[
+      ['Canapé 3 places ou d\'angle','3-seater or corner sofa',2.5,'Sofa 3-Sitzer oder Ecksofa'],['Canapé 2 places','2-seater sofa',1.5,'Sofa 2-Sitzer'],
+      ['Canapé-lit','Sofa bed',2,'Schlafsofa'],['Fauteuil','Armchair',1,'Sessel'],['Table basse','Coffee table',0.5,'Salontisch'],
+      ['Buffet','Sideboard',1.5,'Sideboard'],['Étagère','Shelf unit',0.8,'Regal'],['Bureau','Desk',1,'Schreibtisch'],['Chaise de bureau','Office chair',0.3,'Bürostuhl'],
+      ['Ordinateur','Computer',0.2,'Computer'],['Bibliothèque','Bookcase',1.2,'Bücherregal'],['Meuble télé','TV unit',0.6,'TV-Möbel'],['Télé','TV',0.3,'Fernseher'],
+      ['Lampe','Lamp',0.1,'Lampe'],['Lustre','Chandelier',0.1,'Kronleuchter'],['Petit meuble','Small furniture',0.4,'Kleinmöbel'],['Miroir','Mirror',0.2,'Spiegel'],['Tapis','Rug',0.3,'Teppich']]},
+    { fr:'Cuisine', en:'Kitchen', de:'Küche', items:[
+      ['Congélateur','Freezer',0.8,'Gefrierschrank'],['Frigo','Fridge',0.8,'Kühlschrank'],['Cuisinière','Cooker',0.5,'Kochherd'],['Four','Oven',0.3,'Backofen'],
+      ['Four à micro-ondes','Microwave',0.1,'Mikrowelle'],['Lave-linge','Washing machine',0.6,'Waschmaschine'],['Lave-vaisselle','Dishwasher',0.5,'Geschirrspüler'],
+      ['Sèche-linge','Tumble dryer',0.6,'Tumbler'],['Table','Table',1,'Tisch'],['Chaise','Chair',0.25,'Stuhl'],['Placard','Cupboard',1,'Schrank'],['Cabinet','Cabinet',0.6,'Schränkchen']]},
+    { fr:'Extérieur', en:'Outdoor', de:'Aussenbereich', items:[
+      ['Table d\'extérieur','Outdoor table',0.8,'Gartentisch'],['Banc','Bench',0.5,'Bank'],['Chaise de jardin','Garden chair',0.2,'Gartenstuhl'],['Barbecue','Barbecue',0.4,'Grill']]},
+    { fr:'Divers', en:'Miscellaneous', de:'Verschiedenes', items:[
+      ['Cartons','Boxes',0.1,'Kartons'],['Appareil d\'exercice','Exercise machine',0.5,'Fitnessgerät'],['Outils','Tools',0.3,'Werkzeug'],['Plantes','Plants',0.1,'Pflanzen'],
+      ['Valise','Suitcase',0.1,'Koffer'],['Ski / snowboard','Ski / snowboard',0.1,'Ski / Snowboard'],['Vélo','Bicycle',0.5,'Velo']]},
+    { fr:'Encombrants et lourds', en:'Bulky and heavy', de:'Sperrig und schwer', items:[
+      ['Piano (droit)','Piano (upright)',1.5,'Klavier'],['Piano (électrique)','Piano (electric)',0.5,'E-Piano'],['Piano (à queue)','Piano (grand)',3,'Flügel'],['Moto','Motorbike',1.5,'Motorrad']]},
+    { fr:'Cartons', en:'Moving boxes', de:'Umzugskartons', items:[
+      ['Carton standard','Standard box',0.12,'Standardkarton'],['Carton penderie','Wardrobe box',0.3,'Kleiderbox'],['Carton livres','Book box',0.08,'Bücherkarton'],['Carton de vins','Wine box',0.1,'Weinkarton']]}
   ];
   const qty = {};               // "c-i" -> quantité
   const openCats = new Set([0]);
@@ -138,7 +199,7 @@
   const totalEl = document.getElementById('totalVol');
   const m2El = document.getElementById('m2');
   const m2Vol = document.getElementById('m2Vol');
-  const fmt = (v, d=2)=>v.toFixed(d).replace('.', lang === 'fr' ? ',' : '.');
+  const fmt = (v, d=2)=>v.toFixed(d).replace('.', lang === 'en' ? '.' : ',');
 
   function itemsVolume(){
     let t = 0;
@@ -163,7 +224,7 @@
         <summary>${c[lang]}<span class="cat-vol" data-catvol="${ci}"></span></summary>
         <div class="items">
           ${c.items.map((it,ii)=>{
-            const k = ci+'-'+ii, q = qty[k]||0, name = lang === 'en' ? it[1] : it[0];
+            const k = ci+'-'+ii, q = qty[k]||0, name = lang === 'en' ? it[1] : lang === 'de' ? it[3] : it[0];
             return `<div class="item${q?' has':''}" data-k="${k}">
               <span class="item-name">${name}</span>
               <span class="stepper">
