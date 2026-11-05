@@ -1,6 +1,6 @@
 # B&L Déménagement — site web
 
-Site one-page bilingue (FR / EN) de B&L Déménagement : déménagement, débarras, nettoyage,
+Site one-page trilingue (FR / EN / DE) de B&L Déménagement : déménagement, débarras, nettoyage,
 avec calculateur de volume et demande de devis en ligne.
 
 Réalisé par [Opteamize](https://opteamize.ch).
