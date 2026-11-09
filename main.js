@@ -217,16 +217,27 @@
       el.textContent = v > 0 ? fmt(v) + ' m³' : '';
     });
   }
+  // Emojis purement visuels, sans changement des volumes ni des traductions.
+  const CAT_ICONS = ['🛏️','🛋️','🍳','🌳','📦','🎹','📦'];
+  const ITEM_ICONS = [
+    ['🛏️','🛏️','🛏️','🛏️','🛏️','🛏️','🚪','🚪','🗄️','🛋️'],
+    ['🛋️','🛋️','🛋️','🪑','🪑','🗄️','📚','🖥️','🪑','💻','📚','📺','📺','💡','💡','🗄️','🪞','🧶'],
+    ['🧊','🧊','🍳','♨️','🍲','🧺','🍽️','🧺','🪑','🪑','🚪','🗄️'],
+    ['🪑','🪑','🪑','🔥'],
+    ['📦','🏋️','🧰','🪴','🧳','🎿','🚲'],
+    ['🎹','🎹','🎹','🏍️'],
+    ['📦','📦','📚','🍷']
+  ];
   function renderCalc(){
     if(!calcEl) return;
     calcEl.innerHTML = CATS.map((c,ci)=>`
       <details class="cat" data-cat="${ci}" ${openCats.has(ci)?'open':''}>
-        <summary>${c[lang]}<span class="cat-vol" data-catvol="${ci}"></span></summary>
+        <summary><span aria-hidden="true">${CAT_ICONS[ci]} </span>${c[lang]}<span class="cat-vol" data-catvol="${ci}"></span></summary>
         <div class="items">
           ${c.items.map((it,ii)=>{
             const k = ci+'-'+ii, q = qty[k]||0, name = lang === 'en' ? it[1] : lang === 'de' ? it[3] : it[0];
             return `<div class="item${q?' has':''}" data-k="${k}">
-              <span class="item-name">${name}</span>
+              <span class="item-name"><span aria-hidden="true">${ITEM_ICONS[ci][ii] || '📦'} </span>${name}</span>
               <span class="stepper">
                 <button type="button" data-step="-1" aria-label="− ${name}">−</button>
                 <output>${q}</output>
