@@ -3,7 +3,7 @@
   const EMAIL = 'info@bldem.ch';
   // Clé Web3Forms (web3forms.com) : les demandes de devis arrivent dans la boîte liée à cette clé.
   // Clé publique par conception (elle ne permet que d'envoyer des messages). Vide = repli sur la messagerie (mailto).
-  const WEB3FORMS_KEY = '069d97bd-c83e-4284-af7c-d56444e21f62';
+  const WEB3FORMS_KEY = 'c8fe9768-cb5f-4dff-aa48-08c8be3f167c';
   const root = document.documentElement;
   const store = {
     get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
@@ -217,16 +217,27 @@
       el.textContent = v > 0 ? fmt(v) + ' m³' : '';
     });
   }
+  // Emojis purement visuels, sans changement des volumes ni des traductions.
+  const CAT_ICONS = ['🛏️','🛋️','🍳','🌳','📦','🎹','📦'];
+  const ITEM_ICONS = [
+    ['🛏️','🛏️','🛏️','🛏️','🛏️','🛏️','🚪','🚪','🗄️','🛋️'],
+    ['🛋️','🛋️','🛋️','🪑','🪑','🗄️','📚','🖥️','🪑','💻','📚','📺','📺','💡','💡','🗄️','🪞','🧶'],
+    ['🧊','🧊','🍳','♨️','🍲','🧺','🍽️','🧺','🪑','🪑','🚪','🗄️'],
+    ['🪑','🪑','🪑','🔥'],
+    ['📦','🏋️','🧰','🪴','🧳','🎿','🚲'],
+    ['🎹','🎹','🎹','🏍️'],
+    ['📦','📦','📚','🍷']
+  ];
   function renderCalc(){
     if(!calcEl) return;
     calcEl.innerHTML = CATS.map((c,ci)=>`
       <details class="cat" data-cat="${ci}" ${openCats.has(ci)?'open':''}>
-        <summary>${c[lang]}<span class="cat-vol" data-catvol="${ci}"></span></summary>
+        <summary><span aria-hidden="true">${CAT_ICONS[ci]} </span>${c[lang]}<span class="cat-vol" data-catvol="${ci}"></span></summary>
         <div class="items">
           ${c.items.map((it,ii)=>{
             const k = ci+'-'+ii, q = qty[k]||0, name = lang === 'en' ? it[1] : lang === 'de' ? it[3] : it[0];
             return `<div class="item${q?' has':''}" data-k="${k}">
-              <span class="item-name">${name}</span>
+              <span class="item-name"><span aria-hidden="true">${ITEM_ICONS[ci][ii] || '📦'} </span>${name}</span>
               <span class="stepper">
                 <button type="button" data-step="-1" aria-label="− ${name}">−</button>
                 <output>${q}</output>
