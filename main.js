@@ -3,7 +3,7 @@
   const EMAIL = 'info@bldem.ch';
   // Clé Web3Forms (web3forms.com) : les demandes de devis arrivent dans la boîte liée à cette clé.
   // Clé publique par conception (elle ne permet que d'envoyer des messages). Vide = repli sur la messagerie (mailto).
-  const WEB3FORMS_KEY = '069d97bd-c83e-4284-af7c-d56444e21f62';
+  const WEB3FORMS_KEY = 'c8fe9768-cb5f-4dff-aa48-08c8be3f167c';
   const root = document.documentElement;
   const store = {
     get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
